@@ -3,6 +3,8 @@ Homework 3: Created by Cris Zbavitel
 ## Quick Start
 ### Local Test Setup
 
+decompress the templates file - this holds the index.html, unique.html, and update.html
+
 First, install a Python 3 virtual environment with:
 ```
 sudo apt-get install python3-venv
