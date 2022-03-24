@@ -4,16 +4,10 @@ from psycopg2 import Error
 # function is based on a tutorial at: https://pynative.com/python-postgresql-tutorial/
 def connect_to_db(username='raywu1990',password='test',host='127.0.0.1',port='5432',database='dvdrental'):
 	try:
-		# Connect to an existing database
-		connection = psycopg2.connect(user=username,
-									  password=password,
-									  host=host,
-									  port=port,
-									  database=database)
+		connection = psycopg2.connect(user=username, password=password, host=host, port=port, database=database)
 
-		# Create a cursor to perform database operations
 		cursor = connection.cursor()
-		print("connected to the database")
+		print("connected to database")
 
 		return cursor, connection
 
@@ -35,17 +29,12 @@ def disconnect_from_db(connection,cursor):
 def run_and_fetch_sql(cursor, sql_string=""):
 	try:
 		# Executing a SQL query
-		# cursor.execute("SELECT version();")
-		# cursor.execute("SELECT * from customer;")
 		cursor.execute(sql_string)
 		# Fetch result
-		# record = cursor.fetchone()
-		# print("You are connected to - ", record, "\n")
 		record = cursor.fetchall()
-		# print("Here are the first 5 rows", record[:5])
 		return record
 	except (Exception, Error) as error:
-		print("Errors while executes the code: ", error)
+		print("Errors while executing code: ", error)
 		return -1
 
 def insert_row(cursor):
@@ -55,7 +44,7 @@ def insert_row(cursor):
 		cursor.connection.commit()
 		return 'Success!'
 	except (Exception, Error) as error:
-		print("Errors while executing the code: ", error)
+		print("Errors while executing code: ", error)
 		return error
 
 def unique(cursor):
@@ -65,5 +54,5 @@ def unique(cursor):
 		data = cursor.fetchall()
 		return status, data
 	except (Exception, Error) as error:
-		print("Errors while executing the code: ", error)
+		print("Errors while executing code: ", error)
 		return error, None
