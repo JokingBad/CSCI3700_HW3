@@ -30,7 +30,6 @@ def unique():
 		col_names = [desc[0] for desc in cursor.description]       
 		log = data[:]
 		
-
 	util.disconnect_from_db(connection,cursor)
 
 	return render_template('unique.html', sql_table = log, table_title = col_names, is_error = is_error)
