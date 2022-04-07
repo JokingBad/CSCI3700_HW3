@@ -31,4 +31,4 @@ Then you can start the server with:
 python3 main.py
 ```
 
-When the server starts, go to your browser and enter "127.0.0.1:5000/api/update_fruit_a" or "127.0.0.1:5000/api/unique"
+When the server starts, go to your internet browser and enter "127.0.0.1:5000/api/update_fruit_a" or "127.0.0.1:5000/api/unique"
