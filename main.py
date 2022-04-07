@@ -3,10 +3,10 @@ import util
 
 app = Flask(__name__)
 
-username='raywu1990'
-password='test'
-host='127.0.0.1'
-port='5432'
+username = 'raywu1990'
+password = 'test'
+host = '127.0.0.1'
+port ='5432'
 database='dvdrental'
 
 @app.route("/api/update_basket_a")
